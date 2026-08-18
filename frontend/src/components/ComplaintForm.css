@@ -1,0 +1,228 @@
+/* ============================================================================
+   COMPLAINT FORM - PROFESSIONAL DESIGN
+   ============================================================================ */
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: -0.5px;
+}
+
+.form-description {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   FORM FIELDS
+   ============================================================================ */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a202c;
+  letter-spacing: 0.25px;
+}
+
+.required {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.complaint-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #1a202c;
+  background: #ffffff;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.complaint-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.complaint-textarea:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.complaint-textarea::placeholder {
+  color: #cbd5e1;
+}
+
+/* ============================================================================
+   FORM META INFORMATION
+   ============================================================================ */
+
+.form-meta {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+}
+
+.char-count {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.char-count.warning {
+  color: #f59e0b;
+}
+
+/* ============================================================================
+   SUBMIT BUTTON
+   ============================================================================ */
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.submit-button .icon {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) .icon {
+  transform: translateX(2px);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================================
+   FORM HINT
+   ============================================================================ */
+
+.form-hint {
+  padding: 0.875rem 1rem;
+  background: #f0f4ff;
+  border-left: 3px solid #2563eb;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  color: #1e40af;
+}
+
+.form-hint p {
+  margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .complaint-form {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+  }
+
+  .form-description {
+    font-size: 0.875rem;
+  }
+
+  .complaint-textarea {
+    padding: 0.875rem;
+    font-size: 1rem; /* Prevents zoom on iOS */
+  }
+
+  .submit-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .complaint-form {
+    padding: 1rem;
+  }
+
+  .form-title {
+    font-size: 1.125rem;
+  }
+
+  .complaint-textarea {
+    min-height: 120px;
+  }
+}

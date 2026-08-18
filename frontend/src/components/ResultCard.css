@@ -1,0 +1,418 @@
+/* ============================================================================
+   RESULT CARD - PROFESSIONAL DESIGN
+   ============================================================================ */
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease;
+}
+
+.result-card.error-card {
+  border-left: 4px solid #ef4444;
+}
+
+.result-card.success-card {
+  border-left: 4px solid #10b981;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   RESULT BADGE
+   ============================================================================ */
+
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+
+.result-badge.success {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.result-badge.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-text {
+  letter-spacing: 0.25px;
+}
+
+/* ============================================================================
+   RESULT CONTENT
+   ============================================================================ */
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border-left: 3px solid #2563eb;
+}
+
+.ticket-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticket-id {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a202c;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* ============================================================================
+   PRIMARY RESULT SECTION - MOST IMPORTANT INFORMATION
+   ============================================================================ */
+
+.primary-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%);
+  border-radius: 0.625rem;
+  border: 1px solid #dbeafe;
+}
+
+.department-block,
+.priority-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  border-left: 4px solid #2563eb;
+}
+
+.priority-block {
+  border-left-color: inherit;
+}
+
+.block-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.block-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: -0.25px;
+}
+
+.block-value.department {
+  color: #0ea5e9;
+}
+
+/* ============================================================================
+   ANALYSIS SECTION
+   ============================================================================ */
+
+.analysis-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.625rem;
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+}
+
+.translation-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #1a202c;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border-left: 3px solid #0ea5e9;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ============================================================================
+   RESULT ROWS
+   ============================================================================ */
+
+.result-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9375rem;
+}
+
+.result-row.full-width {
+  grid-template-columns: 140px 1fr;
+}
+
+.row-label {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+}
+
+.row-value {
+  color: #1a202c;
+  word-break: break-word;
+}
+
+.language-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  background: #dbeafe;
+  color: #0c4a6e;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  width: fit-content;
+}
+
+.fallback-queue {
+  padding: 0.375rem 0.75rem;
+  background: #fecaca;
+  color: #7f1d1d;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  width: fit-content;
+}
+
+/* ============================================================================
+   CONFIDENCE BAR
+   ============================================================================ */
+
+.confidence-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.confidence-bar {
+  flex: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.confidence-text {
+  font-weight: 600;
+  color: #1a202c;
+  min-width: 3rem;
+  text-align: right;
+}
+
+/* ============================================================================
+   SOURCE BADGE
+   ============================================================================ */
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.source-badge.gemini {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.source-badge.mock {
+  background: #ddd6fe;
+  color: #4c1d95;
+}
+
+.source-badge.fallback {
+  background: #fecdd3;
+  color: #831829;
+}
+
+.source-badge.api {
+  background: #dbeafe;
+  color: #0c4a6e;
+}
+
+/* ============================================================================
+   METADATA SECTION
+   ============================================================================ */
+
+.metadata-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+/* ============================================================================
+   ERROR SECTION
+   ============================================================================ */
+
+.error-section {
+  padding: 1rem;
+  background: #fee2e2;
+  border-radius: 0.5rem;
+  border-left: 4px solid #ef4444;
+}
+
+.error-message {
+  margin: 0;
+  color: #7f1d1d;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .result-card {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .primary-result {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .result-row {
+    grid-template-columns: 110px 1fr;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .row-label {
+    font-size: 0.8125rem;
+  }
+
+  .analysis-section {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .ticket-header {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .ticket-id {
+    font-size: 0.9375rem;
+  }
+
+  .block-value {
+    font-size: 1rem;
+  }
+
+  .primary-result {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .department-block,
+  .priority-block {
+    padding: 0.75rem;
+  }
+
+  .result-row {
+    grid-template-columns: 1fr;
+    gap: 0.375rem;
+  }
+
+  .row-label {
+    font-size: 0.75rem;
+  }
+
+  .row-value {
+    font-size: 0.875rem;
+  }
+
+  .confidence-container {
+    gap: 0.5rem;
+  }
+
+  .confidence-text {
+    min-width: 2.5rem;
+  }
+}

@@ -1,0 +1,561 @@
+/* ============================================================================
+   TRIAGE PANEL - AI ANALYSIS RESULT
+   ============================================================================ */
+
+.triage-panel {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.triage-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-surface);
+}
+
+.triage-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ============================================================================
+   EMPTY STATE
+   ============================================================================ */
+
+.triage-panel.empty-state {
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: var(--text-tertiary);
+}
+
+.empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.empty-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* ============================================================================
+   PROCESSING STATE
+   ============================================================================ */
+
+.triage-panel.processing-state .triage-content {
+  padding: 2rem;
+}
+
+.processing-rail {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.processing-step {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9375rem;
+}
+
+.step-indicator {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  font-size: 0.625rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.step-indicator.completed {
+  color: var(--color-success);
+  font-size: 0.875rem;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.step-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.step-value {
+  color: var(--accent-primary);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.step-line {
+  grid-column: 1;
+  height: 20px;
+  border-left: 2px solid var(--border-primary);
+  margin-left: 7px;
+}
+
+/* ============================================================================
+   RESULT STATE
+   ============================================================================ */
+
+.triage-panel.result-state {
+  gap: 0;
+}
+
+.triage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+/* ============================================================================
+   ROUTING RESULT - PRIMARY INFORMATION
+   ============================================================================ */
+
+.routing-result {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(54, 214, 197, 0.05) 0%, rgba(54, 214, 197, 0.02) 100%);
+  border: 1px solid rgba(54, 214, 197, 0.2);
+  border-radius: 8px;
+}
+
+.result-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.result-department {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  letter-spacing: -0.5px;
+}
+
+.result-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+.meta-category {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-priority {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-priority.priority-high {
+  color: var(--color-high);
+}
+
+.meta-priority.priority-medium {
+  color: var(--color-medium);
+}
+
+.meta-priority.priority-low {
+  color: var(--color-low);
+}
+
+/* ============================================================================
+   ANALYSIS DETAILS
+   ============================================================================ */
+
+.analysis-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-surface);
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.detail-label {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.detail-value.translation {
+  font-style: italic;
+  color: var(--text-secondary);
+  padding: 0.75rem;
+  background: var(--bg-raised);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px;
+}
+
+/* ============================================================================
+   CONFIDENCE BAR
+   ============================================================================ */
+
+.confidence-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 24px;
+}
+
+.confidence-fill {
+  flex: 1;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.confidence-text {
+  font-weight: 700;
+  color: var(--accent-primary);
+  min-width: 3rem;
+  text-align: right;
+  font-size: 0.8125rem;
+}
+
+/* ============================================================================
+   RESULT METADATA
+   ============================================================================ */
+
+.result-metadata {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-primary);
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.metadata-label {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ticket-id-display {
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.source-badge {
+  display: inline-flex;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.source-badge.source-gemini {
+  background: rgba(255, 165, 0, 0.15);
+  color: var(--color-medium);
+}
+
+.source-badge.source-mock {
+  background: rgba(137, 116, 255, 0.15);
+  color: #8974ff;
+}
+
+.source-badge.source-fallback {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--color-high);
+}
+
+.source-badge.source-api {
+  background: rgba(54, 214, 197, 0.15);
+  color: var(--accent-primary);
+}
+
+/* ============================================================================
+   MANUAL REVIEW STATE
+   ============================================================================ */
+
+.triage-panel.manual-review-state {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.05) 0%, rgba(255, 107, 107, 0.05) 100%);
+}
+
+.manual-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.review-icon {
+  color: var(--text-tertiary);
+}
+
+.review-text {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.review-queue {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--color-manual);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.queue-arrow {
+  color: var(--color-manual);
+  font-weight: 700;
+}
+
+.queue-destination {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-manual);
+}
+
+.ticket-footer {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================================
+   ERROR STATE
+   ============================================================================ */
+
+.triage-panel.error-state {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(255, 107, 107, 0.02) 100%);
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-icon {
+  color: var(--color-high);
+}
+
+.error-text {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.fallback-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  margin-top: 0.5rem;
+}
+
+.notice-label {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.notice-value {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.panel-icon,
+.step-icon,
+.queue-icon,
+.status-icon,
+.sample-svg,
+.badge-svg,
+.button-arrow {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+.panel-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.step-icon.completed {
+  color: var(--color-success);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .triage-content {
+    padding: 1.5rem;
+  }
+
+  .routing-result {
+    padding: 1rem;
+  }
+
+  .result-department {
+    font-size: 1.25rem;
+  }
+
+  .result-metadata {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .triage-panel {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .triage-panel {
+    min-height: 250px;
+  }
+
+  .triage-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .triage-title {
+    font-size: 0.875rem;
+  }
+
+  .triage-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .result-box {
+    gap: 0.5rem;
+  }
+
+  .result-department {
+    font-size: 1.125rem;
+  }
+
+  .result-meta {
+    flex-wrap: wrap;
+  }
+
+  .analysis-details {
+    padding: 0.75rem;
+  }
+
+  .manual-content {
+    padding: 1.5rem;
+  }
+
+  .ticket-footer {
+    gap: 1rem;
+  }
+}
